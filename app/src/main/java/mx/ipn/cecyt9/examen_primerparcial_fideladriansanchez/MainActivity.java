@@ -1,5 +1,6 @@
 package mx.ipn.cecyt9.examen_primerparcial_fideladriansanchez;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
         PasswordObtenido = tv2.getText().toString();
 
         if(PasswordObtenido.equals(Password) && UsuarioObtenido.equals(Usuario)){
-            Toast.makeText(MainActivity.this,UsuarioObtenido,Toast.LENGTH_SHORT).show();
+            Intent intento = new Intent(MainActivity.this, Imagen.class);
+            startActivity(intento);
         }
         else{
-            Toast.makeText(MainActivity.this,UsuarioObtenido,Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Usuario y/o Contraseña incorrectos",Toast.LENGTH_SHORT).show();
         }
 
     }
